@@ -1,4 +1,12 @@
-var db = require('../config');
+var urlSchema = require('../config').urlSchema;
+var crypto = require('crypto');
+
+var Link = mongoose.model('Link', urlSchema);
+
+
+
+
+/*var db = require('../config');
 var crypto = require('crypto');
 
 var Link = db.Model.extend({
@@ -17,3 +25,6 @@ var Link = db.Model.extend({
 });
 
 module.exports = Link;
+*/
+
+
