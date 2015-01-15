@@ -5,7 +5,7 @@ mongoose.connect('mongodb://localhost/test');
 
 var Schema = mongoose.Schema;
 
-modules.exports.urlSchema = new Schema({
+module.exports.urlSchema = new Schema({
   url: String,
   base_url: String,
   code: String,
@@ -13,9 +13,7 @@ modules.exports.urlSchema = new Schema({
   visits: {type: Number, default: 0}
 });
 
-modules.
-
-modules.exports.userSchema = new Schema({
+module.exports.userSchema = new Schema({
   username: String,
   password: String
 });
