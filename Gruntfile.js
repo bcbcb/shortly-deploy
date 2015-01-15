@@ -114,10 +114,17 @@ module.exports = function(grunt) {
     'uglify'
   ]);
 
-  grunt.registerTask('upload', function(n) {
+  grunt.registerTask('upload', function() {
     if(grunt.option('prod')) {
       // add your production server task here
-      console.log('proddddd')
+      var gitpush = grunt.util.spawn({
+           cmd: 'git',
+           grunt: true,
+           args: 'push azure master'
+      });
+      gitpush.stdout.pipe(process.stdout);
+      gitpush.stderr.pipe(process.stderr);
+
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
